@@ -26,11 +26,9 @@ namespace TabSanity
 		[ImportingConstructor]
 		internal KeyFilterFactory(
 			ICompletionBroker completionBroker,
-			ISignatureHelpBroker signatureHelpBroker,
-			ISmartTagBroker smartTagBroker,
-			IQuickInfoBroker quickInfoBroker)
+			ISignatureHelpBroker signatureHelpBroker)
 		{
-			_helperFactory = new DisplayWindowHelper(completionBroker, signatureHelpBroker, smartTagBroker, quickInfoBroker);
+			_helperFactory = new DisplayWindowHelper(completionBroker, signatureHelpBroker);
 		}
 
 		public void VsTextViewCreated(IVsTextView viewAdapter)
